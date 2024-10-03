@@ -1,0 +1,97 @@
+.homepage{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black ;
+    
+}
+
+.login-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgb(34, 34, 34);
+    color : white;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;
+   
+  
+}
+
+.fa-icon-logo{
+    font-size: 40px;
+}
+
+.login-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-text{
+    margin-left: 25px;
+    font-family:Georgia ;
+    font-size: larger;
+    font-weight: 400;
+
+}
+.label-name{
+    font-size: small;
+    margin-bottom: 2px;
+}
+.username-container{
+  background-color: #fffcfc;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  border-radius: 3px;
+  height: 40px;
+  margin-bottom: 25px;
+}
+.password-container{
+    background-color: #fffcfc;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    border-radius: 3px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.username-input{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: 0px;
+    color: black;
+}
+.label-password{
+    font-size: small;
+    margin-bottom: 2px;
+}
+.login-btn {
+    background-color: #e50914;
+    color: white;
+    border: 0px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+  }

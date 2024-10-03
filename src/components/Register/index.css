@@ -1,0 +1,95 @@
+.register-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+.register-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 10px;
+    width: 30%;
+    color: rgb(255, 255, 255);
+
+}
+
+.register-heading{
+    align-self: center;
+    font-size: larger;
+    font-weight: 400;
+    font-family: Robota;
+}
+.username-label{
+    font-size: small;
+    margin-bottom: 2px;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.username-container{
+    height: 30px;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffcfc;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.input-date-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffcfc;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+}
+.date-para{
+    color: red;
+    font-size: smaller;
+}
+.age-gender-container{
+    display: flex;
+    justify-content: space-between;
+}
+.age-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5px;
+    width: 48%;
+}
+.age-lable{
+    margin-bottom: 2px;
+}
+.gender-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5px;
+    width: 48%;
+}
+.radio-item{
+    display: flex;
+}
