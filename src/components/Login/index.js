@@ -7,14 +7,49 @@ const Login = () => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [isChecked, setChecked] = useState(false)
 
 
-    const changeUsername = event => {
+    const changeUsername = event => {  
         setUsername(event.target.value)
     }
-
     const changePassword = event => {
         setPassword(event.target.value)
+    }
+
+    const handleChange = event => {
+        if (event.target.checked){
+            setChecked(true)
+        }
+        else{
+            setChecked(false)
+        }
+    }
+
+    const onLogin = async event => {
+        event.preventDefault()
+        const userDetails = {username , password}
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'  // Add this header
+              },
+            body: JSON.stringify(userDetails)
+        }
+
+        const url = 'http://localhost:8080/login'
+        const response = await fetch(url, options)
+        
+        if (response.ok){
+            const data = await response.json()
+            console.log(data)
+        }
+        else{
+            console.log("not valid")
+        }
+        
+
+
     }
 
 
@@ -25,7 +60,7 @@ const Login = () => {
                     <FaAccusoft className="fa-icon-logo" />
                     <p className="login-text">HRMS Login Portal</p>
                 </div>
-                <form className="login-form">
+                <form className="login-form" onSubmit={onLogin}>
                     <label htmlFor="username" className="label-name">
                         USERNAME
                     </label>
@@ -45,7 +80,7 @@ const Login = () => {
                         <input
                             className="username-input"
                             value={password}
-                            type="text"
+                            type="password"
                             id="password"
                             onChange={changePassword}
                         />
@@ -53,6 +88,7 @@ const Login = () => {
                     <label>
                         <input
                             type="checkbox"
+                            onChange={handleChange}
                         />
                         Remember Me
                     </label>
