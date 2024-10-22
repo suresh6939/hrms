@@ -95,3 +95,6 @@
     cursor: pointer;
     width: 100%;
   }
+.incorrect-warning{
+    color: #e50914;
+}

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaAccusoft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate} from 'react-router-dom';
+import Cookies from "js-cookie";
 import './index.css'
 
 const Login = () => {
@@ -8,6 +10,14 @@ const Login = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [isChecked, setChecked] = useState(false)
+    const [isValid , setValid] = useState(true)
+    const history = useNavigate()
+
+    const token = Cookies.get('jwt_token')
+    if(token !== undefined){
+        return <Navigate to="/" />
+    }
+    
 
 
     const changeUsername = event => {  
@@ -26,6 +36,19 @@ const Login = () => {
         }
     }
 
+    const onSuccessSubmit = jwtToken => {
+
+        
+        if(isChecked){
+            Cookies.set('jwt_token', jwtToken , {
+                expires: 30
+            })
+        }
+        history('/')
+        
+       
+    }
+
     const onLogin = async event => {
         event.preventDefault()
         const userDetails = {username , password}
@@ -42,10 +65,10 @@ const Login = () => {
         
         if (response.ok){
             const data = await response.json()
-            console.log(data)
+            onSuccessSubmit(data.token)
         }
         else{
-            console.log("not valid")
+            setValid(false)
         }
         
 
@@ -96,6 +119,7 @@ const Login = () => {
                         <button type="submit" className="login-btn">
                             Sing in
                         </button>
+                        {!isValid && <label className="incorrect-warning">Username or password incorrect</label>}
                     </div>
                     <p>If you don't have account please click here to <Link to={`/register`}>register</Link></p>
                 </form>
