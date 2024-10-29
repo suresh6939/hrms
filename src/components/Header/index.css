@@ -1,0 +1,53 @@
+.header-container {
+    height: 10%;
+    
+    display: flex;
+    justify-content: space-around;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: rgba(255, 255, 255, 0.23);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(2.9px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.56);
+
+    color: white
+
+}
+.nav-first-part{
+    display: flex;
+    align-items: center;
+
+    font-family: roboto;
+    font-style:oblique;
+}
+.nav-logo{
+    margin-right: 15px;
+    font-size: 45px;
+}
+.nav-center-part{
+    display: flex;
+    align-items: center;
+  
+    font-family: roboto;
+    font-style:oblique;
+    
+}
+
+.nav-page{
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 15px;
+    font-size: x-large;
+    color: white
+}
+.nav-last-part{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+  
+
+}
+.nav-profile{
+    color: white;
+}

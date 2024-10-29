@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaAccusoft } from "react-icons/fa";
-import { Link, Navigate } from "react-router-dom";
+import {  Navigate } from "react-router-dom";
 import { useNavigate} from 'react-router-dom';
 import Cookies from "js-cookie";
 import './index.css'
@@ -44,6 +44,11 @@ const Login = () => {
                 expires: 30
             })
         }
+        else{
+            Cookies.set('jwt_token', jwtToken , {
+                expires: 1/24
+            })
+        }
         history('/')
         
        
@@ -65,6 +70,7 @@ const Login = () => {
         
         if (response.ok){
             const data = await response.json()
+            console.log(data)
             onSuccessSubmit(data.token)
         }
         else{
@@ -77,6 +83,7 @@ const Login = () => {
 
 
     return (
+        
         <div className="homepage">
             <div className="login-form-container">
                 <div className="login-header">
@@ -121,7 +128,6 @@ const Login = () => {
                         </button>
                         {!isValid && <label className="incorrect-warning">Username or password incorrect</label>}
                     </div>
-                    <p>If you don't have account please click here to <Link to={`/register`}>register</Link></p>
                 </form>
             </div>
         </div>
