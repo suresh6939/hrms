@@ -38,45 +38,45 @@ const Home = () => {
    const data = {
       labels: days,
       datasets: [
-        {
-          label: "Work Hours",
-          data: [8, 7, 9, 6, 10], // Random data representing hours worked each day
-          borderColor: "rgba(75,192,192,1)",
-          backgroundColor: "rgba(75,192,192,0.2)",
-          tension: 0.4,
-        },
+         {
+            label: "Work Hours",
+            data: [9.5, 7.5, 9, 6, 10], // Random data representing hours worked each day
+            borderColor: "rgba(75,192,192,1)",
+            backgroundColor: "rgba(75,192,192,0.2)",
+            tension: 0.4,
+         },
       ],
-    };
-  
-    // Chart options
-    const options = {
+   };
+
+   // Chart options
+   const options = {
       responsive: true,
       plugins: {
-        legend: {
-          position: "top",
-        },
-        title: {
-          display: true,
-          text: "5-Day Work Hours",
-        },
+         legend: {
+            position: "top",
+         },
+         title: {
+            display: true,
+            text: "5-Day Work Hours",
+         },
       },
       scales: {
-        y: {
-          title: {
-            display: true,
-            text: "Hours",
-          },
-          min: 0,
-          max: 10, // Y-axis maximum value
-        },
-        x: {
-          title: {
-            display: true,
-            text: "Days",
-          },
-        },
+         y: {
+            title: {
+               display: true,
+               text: "Hours",
+            },
+            min: 0,
+            max: 10, // Y-axis maximum value
+         },
+         x: {
+            title: {
+               display: true,
+               text: "Days",
+            },
+         },
       },
-    };
+   };
 
 
    return (
@@ -97,8 +97,30 @@ const Home = () => {
                <button className='check-in'>
                   Reload
                </button>
+
+               <div className="check-in-out-container">
+                  <h3>Today's Check-In and Check-Out</h3>
+                  <table className="check-in-out-table">
+                     <thead>
+                        <tr>
+                           <th>Type</th>
+                           <th>Time</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Check-In</td>
+                           <td>{homeariable.checkIn}</td>
+                        </tr>
+                        <tr>
+                           <td>Check-Out</td>
+                           <td>{homeariable.checkOut}</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
             </div>
-            <div style={{ width: "40%", margin: "0 auto" }}>
+            <div style={{ width: "40%" }}>
                <Line data={data} options={options} />
             </div>
          </div>
