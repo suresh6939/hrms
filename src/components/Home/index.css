@@ -1,7 +1,60 @@
-.home-container{
+.home-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: black
+    background-color: black;
+    color: white;
+}
+
+.home-page-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.hours-checkin-checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-para {
+    font-size: 140px;
+    font-weight: 500;
+}
+
+.heading {
+    font-size: 40px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.hours-minutes {
+    padding: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border: 1px solid white;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.check-in{
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    height: 30px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+
 }
