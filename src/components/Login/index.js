@@ -43,9 +43,15 @@ const Login = () => {
             Cookies.set('jwt_token', jwtToken , {
                 expires: 30
             })
+            Cookies.set('username', username , {
+                expires: 30
+            })
         }
         else{
             Cookies.set('jwt_token', jwtToken , {
+                expires: 1/24
+            })
+            Cookies.set('username', username , {
                 expires: 1/24
             })
         }

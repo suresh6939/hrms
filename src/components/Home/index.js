@@ -97,7 +97,9 @@ const Home = () => {
                <button className='check-in'>
                   Reload
                </button>
-
+            </div>
+            <div style={{ width: "40%" }}>
+               <Line data={data} options={options} />
                <div className="check-in-out-container">
                   <h3>Today's Check-In and Check-Out</h3>
                   <table className="check-in-out-table">
@@ -119,9 +121,6 @@ const Home = () => {
                      </tbody>
                   </table>
                </div>
-            </div>
-            <div style={{ width: "40%" }}>
-               <Line data={data} options={options} />
             </div>
          </div>
       </div>
